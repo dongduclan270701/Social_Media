@@ -25,6 +25,7 @@ function App() {
         <Box sx={{ display: 'flex' }}>
           <Container sx={{ pt: '20px' }}>
             <PrimarySearchAppBar ChangeThemeMode={ChangeThemeMode} themeMode={themeMode} />
+            
             <CssBaseline />
             <BoardBar />
           </Container>

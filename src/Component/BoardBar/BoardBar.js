@@ -10,11 +10,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import {
     PeopleAlt, History, Event, SportsEsports, Groups, KeyboardArrowDown,
-    KeyboardArrowUp, MedicalInformation, Newspaper, Storefront, Message, TurnedIn, Receipt, SkipNext, SkipPrevious, PlayArrow
+    KeyboardArrowUp, MedicalInformation, Newspaper, Storefront, Message, 
+    TurnedIn, Receipt, SkipNext, SkipPrevious, PlayArrow, Add, Videocam,
+    Image, EmojiEmotions
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
-import { Avatar, Fab, Collapse, Grid, Paper, Card, CardMedia, IconButton } from '@mui/material';
+import { Avatar, Fab, Collapse, Grid, Paper, Card, CardMedia, IconButton, CardContent, OutlinedInput, TextField, Button } from '@mui/material';
 import avatarUser from '../../assets/images/257456092_1902492796605190_3704698042727908370_n.jpg'
 import Group_1 from '../../assets/images/lockscreen-bg.jpg'
 import Group_2 from '../../assets/images/login-bg.jpg'
@@ -140,11 +142,12 @@ const BoardBar = () => {
                         </ListItem>
                         {showMoreBoardBarUp === true ? "" : <ListItem disablePadding>
                             <ListItemButton onClick={ShowUp}>
-                                <ListItemIcon sx={{ paddingLeft: "38%" }}>
+                                <ListItemIcon sx={{ paddingLeft: "1%", paddingRight:"3%" }}>
                                     <Fab sx={{ ...fabGreenStyle }} aria-label={"More"} color="inherit">
                                         <KeyboardArrowDown />
                                     </Fab>
                                 </ListItemIcon>
+                                Xem thêm
                             </ListItemButton>
                         </ListItem>
                         }
@@ -198,11 +201,12 @@ const BoardBar = () => {
                             </ListItem>
                             {showMoreBoardBarUp === false ? "" : <ListItem disablePadding>
                                 <ListItemButton onClick={ShowUp}>
-                                    <ListItemIcon sx={{ paddingLeft: "38%" }}>
+                                    <ListItemIcon sx={{ paddingLeft: "1%", paddingRight:"3%" }}>
                                         <Fab sx={{ ...fabGreenStyle }} aria-label={"More"} color="inherit">
                                             <KeyboardArrowUp />
                                         </Fab>
                                     </ListItemIcon>
+                                    Ẩn bớt
                                 </ListItemButton>
                             </ListItem>
                             }
@@ -255,11 +259,12 @@ const BoardBar = () => {
                         </ListItem>
                         {showMoreBoardBarDown === true ? "" : <ListItem disablePadding>
                             <ListItemButton onClick={ShowDown}>
-                                <ListItemIcon sx={{ paddingLeft: "38%" }}>
+                                <ListItemIcon sx={{ paddingLeft: "1%", paddingRight:"3%" }}>
                                     <Fab sx={{ ...fabGreenStyle }} aria-label={"More"} color="inherit">
                                         <KeyboardArrowDown />
                                     </Fab>
                                 </ListItemIcon>
+                                Xem thêm
                             </ListItemButton>
                         </ListItem>
                         }
@@ -276,11 +281,12 @@ const BoardBar = () => {
                             </ListItem>
                             {showMoreBoardBarDown === false ? "" : <ListItem disablePadding>
                                 <ListItemButton onClick={ShowDown}>
-                                    <ListItemIcon sx={{ paddingLeft: "38%" }}>
+                                    <ListItemIcon sx={{ paddingLeft: "1%", paddingRight:"3%" }}>
                                         <Fab sx={{ ...fabGreenStyle }} aria-label={"More"} color="inherit">
                                             <KeyboardArrowUp />
                                         </Fab>
                                     </ListItemIcon>
+                                    Ẩn  bớt
                                 </ListItemButton>
                             </ListItem>
                             }
@@ -302,17 +308,6 @@ const BoardBar = () => {
                                 image={Group_1}
                                 alt="green iguana"
                             />
-                            <Box sx={{ zIndex: 999999,display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-                                <IconButton aria-label="previous">
-                                    {theme.direction === 'rtl' ? <SkipNext /> : <SkipPrevious />}
-                                </IconButton>
-                                <IconButton aria-label="play/pause">
-                                    <PlayArrow sx={{ height: 38, width: 38 }} />
-                                </IconButton>
-                                <IconButton aria-label="next">
-                                    {theme.direction === 'rtl' ? <SkipPrevious /> : <SkipNext />}
-                                </IconButton>
-                            </Box>
                         </Card>
                     </Grid>
                     <Grid item xs md>
@@ -356,6 +351,36 @@ const BoardBar = () => {
                             />
                         </Card>
                     </Grid></Grid>
+            </Box>
+
+            <Box container spacing={1} px={28} pt={3}>
+                <Item elevation={2}  >
+                    <Grid container px={1} py={1} spacing={1} sx={{ bgcolor: "inherit" }}>
+                        <Grid xs={1} md={1} >
+                            <Box pl='4px' pt='2px' >
+                                <Avatar alt="Đồng Đức Lân" src={avatarUser} />
+                            </Box>
+                        </Grid>
+                        <Grid pt="13px" xs={11} md={11} sx={{ textAlign: "start !important", bgcolor: theme.palette.mode === 'light' ? "#e9e9e9" : "#383838", borderRadius: "50px", height: "45px", '&:hover': { backgroundColor: "#cdcdcd" } }} >
+                            <Box pl={2}>
+                                {/* <TextField  sx={{borderRadius:"50px", backgroundColor:"#cdcbcb",color:"gray"}}  fullWidth placeholder='Lân, Bạn đang nghĩ gì thế?' /> */}
+                                <span style={{ textAlign: "none" }}>Lân, Bạn đang nghĩ gì thế?</span>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                    <Divider />
+                    <Grid container px={1} py={1} >
+                        <Grid xs md>
+                            <Button variant="contained" fullWidth sx={{border:"none", bgcolor:theme.palette.mode === 'light' ?"white":"#383838", color:theme.palette.mode === 'light' ?'black':"#e7e3e3", textTransform:"none", '-webkit-tap-highlight-color':"unset", "&:hover" : {bgcolor:theme.palette.mode === 'light' ? "#e3e3e3" :"#585858"}}}><Videocam sx={{paddingRight:"5px"}}/><span> Video trực tiếp</span></Button>
+                        </Grid>
+                        <Grid xs md>
+                            <Button variant="contained" fullWidth sx={{border:"none", bgcolor:theme.palette.mode === 'light' ?"white":"#383838", color:theme.palette.mode === 'light' ?'black':"#e7e3e3", textTransform:"none", '-webkit-tap-highlight-color':"unset", "&:hover" : {bgcolor:theme.palette.mode === 'light' ? "#e3e3e3" :"#585858"}}}><Image sx={{paddingRight:"5px"}}/><span> Ảnh/video</span></Button>
+                        </Grid>
+                        <Grid xs md>
+                            <Button variant="contained" fullWidth sx={{border:"none", bgcolor:theme.palette.mode === 'light' ?"white":"#383838", color:theme.palette.mode === 'light' ?'black':"#e7e3e3", textTransform:"none", '-webkit-tap-highlight-color':"unset", "&:hover" : {bgcolor:theme.palette.mode === 'light' ? "#e3e3e3" :"#585858"}}}><EmojiEmotions sx={{paddingRight:"5px"}}/><span> Cảm xúc, hoạt động</span></Button>
+                        </Grid>
+                    </Grid>
+                </Item>
             </Box>
 
             <Drawer

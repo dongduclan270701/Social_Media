@@ -111,8 +111,13 @@ export default function PrimarySearchAppBar(props) {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Trang cá nhân</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Cài đặt & quyền riêng tư</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Trợ giúp & Hỗ trợ</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Màn hình & trợ năng</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Đóng góp ý kiến</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Đăng xuất</MenuItem>
+
         </Menu>
     );
 
@@ -133,6 +138,7 @@ export default function PrimarySearchAppBar(props) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
+            
             <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="error">
@@ -220,6 +226,7 @@ export default function PrimarySearchAppBar(props) {
                             </Badge>
                         </Tooltip>
                     </IconButton>
+
                     <IconButton
                         size="large"
                         edge="end"
